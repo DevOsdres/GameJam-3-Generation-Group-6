@@ -62,6 +62,7 @@
     <Analyzer Include="C:\Users\Nicolas\.vscode\extensions\visualstudiotoolsforunity.vstuc-1.0.2\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\ActivateObjects.cs" />
     <Compile Include="Assets\AssetStore\Zololgo\OrbitZoomPanCamera\Scripts\OrbitZoomPanCamera.cs" />
     <Compile Include="Assets\Scripts\ProyectileLauncher.cs" />
     <Compile Include="Assets\Scripts\GunRotation.cs" />
