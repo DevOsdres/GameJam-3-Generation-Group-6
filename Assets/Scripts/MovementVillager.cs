@@ -13,22 +13,23 @@ public class MovementVillager : MonoBehaviour
     private bool isShooting = false;
     private Transform playerCamera; 
     private Quaternion initialRotation; 
+    public GameObject bulletPrefab;    
+    public Transform shootPoint; 
+    private float shootingDelay = 1f;
+
     private void Start()
     {
-          // Inicia moviéndose hacia el punto B
         targetPosition = point2.position;
         anim = GetComponent<Animator>();
 
-        // Obtener la referencia a la cámara del jugador
         playerCamera = Camera.main.transform;
 
-        // Guardar la rotación inicial del aldeano
         initialRotation = transform.rotation;
     }
 
     private void Update()
     {
-        if (!isShooting && !anim.GetBool("isDead")) // Solo moverse si no está disparando
+        if (!isShooting && !anim.GetBool("isDead")) 
         {
             MoveVillager();
         }
@@ -82,10 +83,54 @@ public class MovementVillager : MonoBehaviour
         isShooting = true; // Detiene el movimiento mientras dispara
         anim.SetBool("IsShootingAnim", true); // Activa la animación de disparo
         Debug.Log("Started shooting animation"); // Depuración
+        Invoke("StartShooting", 0.6f);
 
-        // Después de 2 segundos, continua el ciclo (ajusta el tiempo según la duración de tu animación)
+        // Disparar 2 balas en 2 segundos
+
+        // Después de 2 segundos, continúa el ciclo (ajusta el tiempo según la duración de tu animación)
         Invoke("ContinueMovement", 2f);
     }
+       private void StartShooting()
+    {
+        StartCoroutine(ShootMultipleBullets());
+    }
+      private IEnumerator ShootMultipleBullets()
+    {
+        // Dispara la primera bala
+        ShootBullet();
+        yield return new WaitForSeconds(shootingDelay); // Espera 0.5 segundos
+        // Dispara la segunda bala
+        ShootBullet();
+    }
+
+     private void ShootBullet()
+    {
+        // Asegúrate de que el prefab de la bala y el punto de disparo están asignados
+        if (bulletPrefab != null && shootPoint != null)
+        {
+            // Instanciar la bala
+            GameObject bullet = Instantiate(bulletPrefab, shootPoint.position, Quaternion.identity);
+
+            // Obtener el script de la bala y configurarla para que apunte a la cámara
+            BulletVill bulletScript = bullet.GetComponent<BulletVill>();
+            if (bulletScript != null)
+            {
+                bulletScript.SetDirection((playerCamera.position - shootPoint.position).normalized);
+            }
+            else
+            {
+                Debug.LogError("El prefab de la bala no tiene un script 'BulletVill' adjunto.");
+            }
+
+            // Puedes agregar un tiempo de vida a la bala si lo deseas
+            Destroy(bullet, 5f);
+        }
+        else
+        {
+            Debug.LogError("Prefab de bala o punto de disparo no están asignados.");
+        }
+    }
+
 
     private void ContinueMovement()
     {
@@ -107,5 +152,10 @@ public class MovementVillager : MonoBehaviour
 
         // Aplica la rotación
         transform.rotation = targetRotation;
+    }
+        private void OnDestroy()
+    {
+        // Detener el disparo cuando el aldeano es destruido
+        CancelInvoke("ShootBullet");
     }
 }
