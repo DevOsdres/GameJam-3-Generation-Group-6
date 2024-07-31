@@ -65,7 +65,6 @@
     <Compile Include="Assets\AssetStore\Zololgo\OrbitZoomPanCamera\Scripts\OrbitZoomPanCamera.cs" />
     <Compile Include="Assets\Scripts\ProyectileLauncher.cs" />
     <Compile Include="Assets\Scripts\GunRotation.cs" />
-    <Compile Include="Assets\Scripts\ActivateObjects.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\AssetStore\BOXOPHOBIC\Skybox Cubemap Extended\Core\Shaders\Skybox Cubemap Extended.shader" />
