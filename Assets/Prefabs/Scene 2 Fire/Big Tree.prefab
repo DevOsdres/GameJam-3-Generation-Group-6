@@ -175,8 +175,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2037074530191491209}
-  - component: {fileID: 7289017935035019437}
   - component: {fileID: -6395760661849761049}
+  - component: {fileID: -8242835106022211546}
   m_Layer: 0
   m_Name: Big Tree
   m_TagString: Untagged
@@ -202,19 +202,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &7289017935035019437
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2042006356220856237}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.4634385, y: 4.8760056, z: 1.5414156}
-  m_Center: {x: -0.23171932, y: 1.9380033, z: -0.27070794}
 --- !u!54 &-6395760661849761049
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -231,6 +218,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &-8242835106022211546
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2042006356220856237}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.6909682, y: 4.394418, z: 1.6568034}
+  m_Center: {x: 4.8570757, y: 2.1428218, z: -6.3994284}
 --- !u!1001 &5797356231393639533
 PrefabInstance:
   m_ObjectHideFlags: 0
