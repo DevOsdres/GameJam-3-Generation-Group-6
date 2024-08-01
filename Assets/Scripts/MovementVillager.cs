@@ -158,4 +158,5 @@ public class MovementVillager : MonoBehaviour
         // Detener el disparo cuando el aldeano es destruido
         CancelInvoke("ShootBullet");
     }
+
 }
