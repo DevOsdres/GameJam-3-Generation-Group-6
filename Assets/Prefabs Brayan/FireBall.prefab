@@ -172,6 +172,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FireParticle
       objectReference: {fileID: 0}
+    - target: {fileID: 5277035624577667082, guid: 4cdcaaa98dbec7e4cb01793334feac47, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
     - target: {fileID: 6609851491133802686, guid: 4cdcaaa98dbec7e4cb01793334feac47, type: 3}
       propertyPath: m_RootOrder
       value: 0
