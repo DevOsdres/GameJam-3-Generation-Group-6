@@ -12,6 +12,7 @@ TagManager:
   - FIRE
   - PLANT
   - PlantVillager
+  - EnemyBullet
   layers:
   - Default
   - TransparentFX

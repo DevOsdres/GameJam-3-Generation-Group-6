@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
 
@@ -12,6 +13,7 @@ public class MainMenu : MonoBehaviour
     public TextMeshProUGUI feedbackText; // Texto para retroalimentación
     public Transform userListContainer; // Contenedor para los botones de usuarios
     public GameObject userButtonPrefab; // Prefab de los botones de usuario
+    //public AudioSource backgroundMusic; // Referencia al AudioSource de la música de fondo
 
     private List<string> userNames = new List<string>();
 
@@ -99,6 +101,11 @@ public class MainMenu : MonoBehaviour
     {
         //int randomScene = Random.Range(1, 7);
         SceneManager.LoadScene(1);
+        //if (backgroundMusic != null)
+        //{
+        //    backgroundMusic.Stop(); // Detener la música de fondo
+        //}
+        //SceneManager.LoadScene(1); // Carga la escena de Game Win indice 7
     }
 
     private void LoadUserNames()
