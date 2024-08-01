@@ -4,12 +4,18 @@
 TagManager:
   serializedVersion: 2
   tags:
+<<<<<<< HEAD
   - FireVillager
   - Bullet
   - WaterVillager
   - PlantVillager
   - Pantalla
   - Bala
+=======
+  - WATER
+  - PLANT
+  - FIRE
+>>>>>>> Brayan
   layers:
   - Default
   - TransparentFX
