@@ -7,20 +7,20 @@ public class ProyectileLauncher : MonoBehaviour
     public Transform gun;
     public Transform launchPoint;
     public GameObject projectile;
-    [SerializeField] private float launchSpeed = 10f;
+    [SerializeField] private float launchSpeed = 20f; // Velocidad de lanzamiento aumentada
 
     [Header("***Trajectory Display***")]
     public LineRenderer lineRenderer;
-    public int LinePoints = 200;
-    public float timeIntervalinPoints = 0.05f;
+    public int LinePoints = 300; // Aumentado para mayor precisión
+    public float timeIntervalinPoints = 0.04f; // Reducido para más detalle
 
     private List<GameObject> activeProjectiles = new List<GameObject>();
-     [SerializeField]  private int maxProjectiles = 3;
-      [SerializeField] private float projectileLifetime = 4f;
+    [SerializeField] private int maxProjectiles = 3;
+    [SerializeField] private float projectileLifetime = 4f;
 
     void Update()
     {
-        // Handle trajectory drawing
+        // Manejar el dibujo de la trayectoria
         if (Input.GetMouseButton(1))
         {
             DrawTrajectory();
@@ -31,13 +31,13 @@ public class ProyectileLauncher : MonoBehaviour
             lineRenderer.enabled = false;
         }
 
-        // Handle projectile launching
+        // Manejar el lanzamiento de proyectiles
         if (Input.GetMouseButtonDown(0) && activeProjectiles.Count < maxProjectiles)
         {
             LaunchProjectile();
         }
-        
-        // Clean up inactive projectiles
+
+        // Limpiar proyectiles inactivos
         CleanUpProjectiles();
     }
 
@@ -46,16 +46,16 @@ public class ProyectileLauncher : MonoBehaviour
         var _projectile = Instantiate(projectile, launchPoint.position, gun.rotation);
         _projectile.GetComponent<Rigidbody>().velocity = launchSpeed * launchPoint.up;
 
-        // Add the new projectile to the list
+        // Agregar el nuevo proyectil a la lista
         activeProjectiles.Add(_projectile);
 
-        // Schedule projectile destruction
+        // Programar la destrucción del proyectil
         Destroy(_projectile, projectileLifetime);
     }
 
     void CleanUpProjectiles()
     {
-        // Remove destroyed projectiles from the list
+        // Eliminar proyectiles destruidos de la lista
         activeProjectiles.RemoveAll(p => p == null);
     }
 
@@ -68,9 +68,9 @@ public class ProyectileLauncher : MonoBehaviour
 
         for (int i = 0; i < LinePoints; i++)
         {
-            var x = (startVelocity.x * time ) + (Physics.gravity.x / 2 * time * time);
-            var y = (startVelocity.y * time)  + (Physics.gravity.y / 2 * time * time);
-            var z = (startVelocity.z * time ) + (Physics.gravity.z / 2 * time * time);
+            var x = (startVelocity.x * time) + (Physics.gravity.x / 2 * time * time);
+            var y = (startVelocity.y * time) + (Physics.gravity.y / 2 * time * time);
+            var z = (startVelocity.z * time) + (Physics.gravity.z / 2 * time * time);
 
             Vector3 point = new Vector3(x, y, z);
             lineRenderer.SetPosition(i, origin + point);

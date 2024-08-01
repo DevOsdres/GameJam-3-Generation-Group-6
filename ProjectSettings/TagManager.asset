@@ -4,23 +4,19 @@
 TagManager:
   serializedVersion: 2
   tags:
-<<<<<<< HEAD
-  - FireVillager
   - Bullet
-  - WaterVillager
-  - PlantVillager
-  - Pantalla
-  - Bala
-=======
+  - FxTemporaire
+  - FireVillager
   - WATER
-  - PLANT
+  - WaterVillager
   - FIRE
->>>>>>> Brayan
+  - PLANT
+  - PlantVillager
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Weapon
   - Water
   - UI
   - 

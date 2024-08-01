@@ -97,8 +97,8 @@ public class MainMenu : MonoBehaviour
 
     private void LoadRandomScene()
     {
-        int randomScene = Random.Range(1, 7);
-        SceneManager.LoadScene(randomScene);
+        //int randomScene = Random.Range(1, 7);
+        SceneManager.LoadScene(1);
     }
 
     private void LoadUserNames()

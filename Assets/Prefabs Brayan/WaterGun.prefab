@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4093177348933529662}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: WaterLaunchPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4093177348933529663}
   m_LocalRotation: {x: 0.00066092605, y: -0, z: -0, w: 0.99999976}
-  m_LocalPosition: {x: 0.0011, y: 0.027155599, z: 0.0021655632}
+  m_LocalPosition: {x: 0.0011, y: 0.0324, z: 0.0022}
   m_LocalScale: {x: 0.01, y: 0.010000001, z: 0.010000001}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -44,35 +44,35 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 185de4f05f67e3d4e8f9cef02d8eb458, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -1.6932337
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 185de4f05f67e3d4e8f9cef02d8eb458, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8.66
+      value: 0.22
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 185de4f05f67e3d4e8f9cef02d8eb458, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 12.338387
+      value: -22.34
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 185de4f05f67e3d4e8f9cef02d8eb458, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7815604
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 185de4f05f67e3d4e8f9cef02d8eb458, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.62382954
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 185de4f05f67e3d4e8f9cef02d8eb458, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 185de4f05f67e3d4e8f9cef02d8eb458, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 185de4f05f67e3d4e8f9cef02d8eb458, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: -77.193
+      value: -90
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 185de4f05f67e3d4e8f9cef02d8eb458, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -80,11 +80,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 185de4f05f67e3d4e8f9cef02d8eb458, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: 180
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 185de4f05f67e3d4e8f9cef02d8eb458, type: 3}
       propertyPath: m_Name
       value: WaterGun
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 185de4f05f67e3d4e8f9cef02d8eb458, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 185de4f05f67e3d4e8f9cef02d8eb458, type: 3}
@@ -206,7 +210,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gun: {fileID: 2989992113057643880}
   launchPoint: {fileID: 4093177348933529662}
-  projectile: {fileID: 8871458828158334872, guid: c839bbbe575dd3e4c992f1fa6c04f7b8, type: 3}
+  projectile: {fileID: 8871458828158334872, guid: 352489634894e69429712e412a3dfa0b, type: 3}
   launchSpeed: 12
   lineRenderer: {fileID: 4093177349262367912}
   LinePoints: 35
@@ -230,7 +234,6 @@ MonoBehaviour:
   maxYAngle: 50
   minXAngle: -90
   maxXAngle: 10
-  fixedXAngle: -70
   pitchObject: {fileID: 4093177348933529662}
 --- !u!4 &2989992113057643880 stripped
 Transform:
