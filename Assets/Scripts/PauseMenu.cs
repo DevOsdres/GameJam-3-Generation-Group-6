@@ -3,14 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
+using UnityEngine.Audio;
 
 public class PauseMenu : MonoBehaviour
 {
+
+    [SerializeField] private Slider musicSlider;
+    [SerializeField] private Slider sfxSlider;
     public static bool isPaused = false;
     public GameObject pauseMenuCanvas;
 
     void Start()
     {
+        AudioManager.Instance.AssignSliders(musicSlider, sfxSlider);
         Time.timeScale = 1f;
     }
 
